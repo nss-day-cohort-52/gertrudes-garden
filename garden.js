@@ -104,3 +104,4 @@ for ( const plantObj of plantsArray ) {
     // console.log( plantObj.growingSeason.toUpperCase(), "Growing Season Uppercase")
   }
 }
+

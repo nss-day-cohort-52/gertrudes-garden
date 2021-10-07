@@ -78,8 +78,44 @@ const plantsArray = [
     edible: true,
     size: "Extra Large"
   }
-
 ]
+
+
+// Add a new plant object to the plant array
+const addVegetableToGarden = (plantObject) => {
+
+  const lastIndex = plantsArray.length - 1         // Get the position of the last item
+  const currentLastPlant = plantsArray[lastIndex]  // Get the last item
+  const maxId = currentLastPlant.id                // Get the id value of the last item
+  const newId = maxId + 1                          // Add 1 to the value from line above
+
+  plantObject.id = newId
+  plantsArray.push(plantObject)
+}
+
+
+addVegetableToGarden({
+  name: "Cumberland River Romanesco",
+  sunnyLocation: true,
+  color: "Toxic Green",
+  quantity: 23,
+  growingSeason: "Summer",
+  edible: true,
+  size: "Medium"
+})
+
+const shallot = {
+  name: "Shelbyville Shallots",
+  sunnyLocation: false,
+  color: "Mild Purple",
+  quantity: 7,
+  growingSeason: "Spring",
+  edible: true,
+  size: "Small"
+}
+
+addVegetableToGarden(shallot)
+
 
 // Gasp! There has been a drought! All plant's quantity is cut in half DONE!
 
@@ -98,9 +134,10 @@ const currentSeason = "Winter"
 
 for ( const plantObj of plantsArray ) {
 
-  if ( currentSeason.toUpperCase() === plantObj.growingSeason.toUpperCase() ) {
-    // It's time to plant the __
-    console.log( `It's time to plant the ${ plantObj.name }!` )
-    // console.log( plantObj.growingSeason.toUpperCase(), "Growing Season Uppercase")
-  }
+  console.log(plantObj)
+  // if ( currentSeason.toUpperCase() === plantObj.growingSeason.toUpperCase() ) {
+  //   // It's time to plant the __
+  //   // console.log( `It's time to plant the ${ plantObj.name }!` )
+  //   // console.log( plantObj.growingSeason.toUpperCase(), "Growing Season Uppercase")
+  // }
 }

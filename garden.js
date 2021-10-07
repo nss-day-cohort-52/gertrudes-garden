@@ -51,6 +51,29 @@ const plantsArray = [
   }
 ]
 
+const anotherPlantArray = [
+  {
+    id: 4,
+    name: "Donelson Dates",
+    sunnyLocation: false,
+    color: "Brown",
+    quantity: 30,
+    growingSeason: "winTer",
+    edible: true,
+    size: "Extra Small"
+  },
+  {
+    id: 5,
+    name: "Memphis Kale",
+    sunnyLocation: false,
+    color: "Forest Green",
+    quantity: 50,
+    growingSeason: "Fall",
+    edible: false,
+    size: "Extra Large"
+  }
+]
+
 const highYieldVegetables = (minimumYield) => {
   // We need a new array to store the found items
   const foundVegetables = []
@@ -73,7 +96,7 @@ const highYieldArray = highYieldVegetables(30)
 
 
 for (const plantObject of highYieldArray) {
-  console.log(`${plantObject.name} is a high yield vegetable`)
+  // console.log(`${plantObject.name} is a high yield vegetable`)
 }
 
 
@@ -118,15 +141,32 @@ const shallot = {
 
 addVegetableToGarden(shallot)
 
+const edibleVegetables = ( anyPlantsArray) => {
+  // set an empty array that will hold all edible vegetables
+  const edibleArray = []
 
+  // iterate through existing array of all vegetables
+  for ( const plantObject of anyPlantsArray) {
+    // if statement to check if the plant is edible
 
+    if (plantObject.edible === true) {
+      // if the plant IS edible, store it in the new array
+      edibleArray.push(plantObject)
+    }
+  }
 
+  return edibleArray
+  // return the new array
+}
 
+// const plantsToEat = edibleVegetables(plantsArray)
 
+// for ( const plant of plantsToEat) {
+//   console.log(`${plant.name} is edible.`)
+// }
 
+const morePlantsToEat = edibleVegetables(anotherPlantArray)
 
-
-
-const edibleVegetables = () => {
-  //
+for ( const plant of morePlantsToEat ) {
+  console.log( `${ plant.name } is edible.` )
 }

@@ -1,32 +1,3 @@
-
-
-
-
-const roseyJalapeñosObj = {
-  id: 1,
-  name: "Rosey Jalapeños",
-  sunnyLocation: true,
-  color: "Red",
-  quantity: 1.5,
-  growingSeason: "Summer",
-  edible: true,
-  size: "Large"
-}
-
-const tennesseeTurnipGreensObj = {
-  id: 2,
-  name: "Tennessee Turnip Greens",
-  sunnyLocation: false,
-  color: "Purple",
-  quantity: 20,
-  growingSeason: "Fall",
-  edible: true,
-  size: "Extra Large"
-}
-
-// console.log( roseyJalapeños )
-// console.log( tennesseeTurnipGreens )
-
 const plantsArray = [
   {
     id: 1,
@@ -45,7 +16,7 @@ const plantsArray = [
     color: "Purple",
     quantity: 20,
     growingSeason: "Fall",
-    edible: true,
+    edible: false,
     size: "Extra Large"
   },
   {
@@ -75,10 +46,41 @@ const plantsArray = [
     color: "Forest Green",
     quantity: 50,
     growingSeason: "Fall",
-    edible: true,
+    edible: false,
     size: "Extra Large"
   }
 ]
+
+const highYieldVegetables = (minimumYield) => {
+  // We need a new array to store the found items
+  const foundVegetables = []
+
+
+  // Iterate plantsArray
+  for (const plantObject of plantsArray) {
+    // Use an if statement to determine if quantity property value is equal or greater than minimumYield
+    if (plantObject.quantity >= minimumYield) {
+      // If the condition is true, add to our new array
+      foundVegetables.push(plantObject)
+    }
+  }
+
+  // return the new array
+  return foundVegetables
+}
+
+const highYieldArray = highYieldVegetables(30)
+
+
+for (const plantObject of highYieldArray) {
+  console.log(`${plantObject.name} is a high yield vegetable`)
+}
+
+
+
+
+
+
 
 
 // Add a new plant object to the plant array
@@ -117,27 +119,14 @@ const shallot = {
 addVegetableToGarden(shallot)
 
 
-// Gasp! There has been a drought! All plant's quantity is cut in half DONE!
 
-// for (const plantObj of plantsArray) {
-//   // set quantity equal to the quantity divided by two
-//   const newPlantObjQuantity = plantObj.quantity / 2
-//   // The Memphis Kale is currently yielding 25 crops.
-//   // String Template: Entire string
-//   // Interpolation: "We are interpolating the plantObj.name into the string template"
-//   console.log(`The ${plantObj.name} is currently yielding ${newPlantObjQuantity} crops!`)
-// }
 
-// See all the plants that are currently in season.
 
-const currentSeason = "Winter"
 
-for ( const plantObj of plantsArray ) {
 
-  console.log(plantObj)
-  // if ( currentSeason.toUpperCase() === plantObj.growingSeason.toUpperCase() ) {
-  //   // It's time to plant the __
-  //   // console.log( `It's time to plant the ${ plantObj.name }!` )
-  //   // console.log( plantObj.growingSeason.toUpperCase(), "Growing Season Uppercase")
-  // }
+
+
+
+const edibleVegetables = () => {
+  //
 }
